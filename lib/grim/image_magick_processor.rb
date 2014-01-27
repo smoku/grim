@@ -25,7 +25,7 @@ module Grim
       quality = options.fetch(:quality, Grim::QUALITY)
       command = [@imagemagick_path, "-resize", width.to_s, "-antialias", "-render",
         "-quality", quality.to_s, "-interlace", "none", "-density", density.to_s,
-        "#{Shellwords.shellescape(pdf.path)}[#{index}]", path]
+        "#{Shellwords.shellescape(pdf.path)}[#{index}]", "-colorspace", "sRGB", path]
       command.unshift("PATH=#{File.dirname(@ghostscript_path)}:#{ENV['PATH']}") if @ghostscript_path
 
       result = `#{command.join(' ')}`
