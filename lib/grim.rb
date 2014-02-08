@@ -9,7 +9,7 @@ module Grim
   WIDTH = 1024
 
   # Default image quality, 1 to 100
-  QUALITY = 90
+  QUALITY = 100
 
   # Default density, any positive integer
   DENSITY = 300
